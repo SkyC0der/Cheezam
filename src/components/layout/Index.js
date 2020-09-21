@@ -7,7 +7,7 @@ const Index = () => {
         <>
           <Search/>
           <Tracks/>
-        </>
+         </>
     )
 }
 

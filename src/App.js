@@ -19,6 +19,7 @@ function App() {
               <Route exact path ="/lyrics/track/:id" component = {Lyrics} />
               </Switch>
             </div>
+            <p className = "copyright text-center">Made with <span aria-label="test-tube"  role = "img">🧪 and 💻</span> by <a id="bio" href="https://github.com/SkyC0der/">SkyCoder</a></p>
           </>
       </Router>
     </Provider>

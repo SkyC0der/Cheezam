@@ -19,9 +19,14 @@ a:hover {
 	color: #e7c055;
 }
 
+#bio:hover{
+  background-color: transparent !important;
+  color: #e7c055;
+}
+
 
 .text-secondary{
-  color: #b9b9b9 !important;
+  color: #d6d2d2 !important;
 }
 
 .navbar {
