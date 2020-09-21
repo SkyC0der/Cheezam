@@ -34,17 +34,17 @@ class Lyrics extends Component {
         }else{
             return (
                 <>
-                    <Link to= "/" className = "btn btn-dark btn-sm mb-4">Go Back</Link>
+                    <Link to= "/" className = "btn btn-dark back btn-sm mb-4">Go Back</Link>
                     <div className="card">
                         <h5 className="card-header">
                             {track.track_name} by <span className="text-secondary">{track.artist_name}</span>
                         </h5>
                         <div className="card-body">
-                            <p className="card-text">{lyrics.lyrics_body}</p>
+                            <pre className="card-text">{lyrics.lyrics_body}</pre>
                         </div>
                     </div>
 
-                    <ul className="list-group mt-3">
+                    <ul className="list-group my-3">
                         <li className="list-group-item">
                             <strong>Album ID</strong>: {track.album_id}
                         </li>

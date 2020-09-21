@@ -1,38 +1,83 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 .App {
-  text-align: center;
+	text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1{
+  font-size: 2rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+a{
+  color: #fff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+a:hover {
+  text-decoration: none;
+  background-color: #2d4059 !important;
+	color: #e7c055;
 }
 
-.App-link {
-  color: #61dafb;
+
+.text-secondary{
+  color: #b9b9b9 !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar {
+  background-color: #2d4059 !important;
+	color: white;
+}
+
+
+body {
+	font-family: 'Roboto', sans-serif;
+  background-color: #ff5353;
+  background-image: url(https://res.cloudinary.com/dudhmrdin/image/upload/v1599663133/MacBook_Pro_-_3_sqdxae.svg);
+  color: #fff;
+  height: 100%;
+}
+
+pre{
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+  color: #fff;
+}
+
+.card {
+	padding: 1.5rem;
+  background: linear-gradient(to right, rgb(248, 142, 89), rgb(255, 85, 88));
+  color: #fff;
+	border-radius: 20px;
+	box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+		0 15px 40px rgba(166, 173, 201, 0.2);
+}
+
+.list-group-item{
+  color: #333;
+}
+
+.back{
+  padding: .375rem .75rem !important;
+}
+
+.btn {
+	background-color: #e7c055;
+	color: white;
+	border: none;
+	padding: 10px;
+	margin: 5px;
+	border-radius: 20px;
+}
+
+.btn:hover, .btn:focus{
+  background-color: #2d4059 !important;
+}
+
+.spinner-load{
+  background-color: #ff5959 !important ;
+  background-image: url(https://res.cloudinary.com/dudhmrdin/image/upload/v1599663133/MacBook_Pro_-_3_sqdxae.svg) !important;
 }

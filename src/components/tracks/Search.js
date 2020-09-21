@@ -13,12 +13,14 @@ class Search extends Component {
 
     findTrack = (dispatch,e) => {
         e.preventDefault();
-        axios.get(`http://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.search?q_track=${this.state.trackTitle}&page_size=3&page=10&s_track_rating=desc&apikey=${process.env.REACT_APP_MM_KEY}`)
+        axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/track.search?q_track=${this.state.trackTitle}&page_size=10&page=1&s_track_rating=desc&apikey=${process.env.REACT_APP_MM_KEY}`)
         .then(res => {
             dispatch({
                 type: 'SEARCH_TRACKS',
                 payload: res.data.message.body.track_list
             })
+
+            this.setState({trackTitle: ''})
         })
         .catch(err => console.log(err));
     }
@@ -29,8 +31,8 @@ class Search extends Component {
                     const { dispatch } = value;
                     return (
                         <div className="card card-body mb-4 p-4">
-                            <h1 className="display-5 text-center">
-                                <i className="fas fa-music"></i> Search For A Song
+                            <h1 className=" text-center">
+                                <i className="fas fa-music"></i> Cheezam
                             </h1>
                             <p className="lead text-center">Get the Lyrics for any song</p>
                             <form onSubmit = {this.findTrack.bind(this,dispatch)}>
