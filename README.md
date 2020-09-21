@@ -1,3 +1,6 @@
+## Cheezam
+This is a React App that uses the MusixMatch API and Context Api
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
