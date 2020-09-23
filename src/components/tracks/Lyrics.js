@@ -7,7 +7,8 @@ import Moment from 'react-moment';
 class Lyrics extends Component {
     state = {
         track:{},
-        lyrics:{}
+        lyrics:{},
+        album:{}
     } 
 
     componentDidMount(){
@@ -20,14 +21,21 @@ class Lyrics extends Component {
         })
         .then( res => {
             // console.log(res.data);
-            this.setState({track: res.data.message.body.track })
-        })
+            this.setState({track: res.data.message.body.track });
+            return   axios.get(`https://cors-anywhere.herokuapp.com/https://api.musixmatch.com/ws/1.1/album.get?album_id=${this.state.track.album_id}&apikey=${process.env.REACT_APP_MM_KEY}`)
+        }).then( res => {
+            // console.log(res.data)
+            this.setState({album: res.data.message.body.album })
+        }
+
+        )
         .catch(err => console.log(err));
     }
+    
 
     render() {
-        const { track, lyrics } = this.state;
-        console.log(track);
+        const { track, lyrics, album } = this.state;
+        // console.log(track);
         
         if ( track === undefined || lyrics === undefined || Object.keys(track).length === 0 || Object.keys(lyrics).length === 0 ){
             return <Spinner/>
@@ -57,7 +65,7 @@ class Lyrics extends Component {
                             {track.explicit === 0 ? 'No' : 'Yes'}
                         </li>
                         <li className="list-group-item">
-                            <strong>Release Date</strong>: <Moment format = "YYYY/MM/DD">{track.updated_time}</Moment>
+                            <strong>Release Date</strong>: <Moment format = "YYYY/MM/DD">{album.album_release_date}</Moment>
                         </li>
                     </ul>
                 </>
